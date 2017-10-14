@@ -1,0 +1,10 @@
+<aura:component implements="flexipage:availableForRecordHome,force:lightningQuickActionWithoutHeader,force:hasRecordId">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <p>No open invoices found.</p>
+    
+    <div class="slds-modal__footer slds-m-top_small">
+    	<lightning:button variant="neutral" label="Cancel" onclick="{!c.closeModal}" />
+        <lightning:button variant="brand" label="Open a Case" onclick="{!c.startCase}" />
+    </div>
+</aura:component>

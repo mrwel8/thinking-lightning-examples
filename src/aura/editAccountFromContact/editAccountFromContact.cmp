@@ -1,0 +1,15 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId">
+    
+    <aura:attribute name="loadedContact" type="Contact"/>
+
+    <force:recordData aura:id="editContact"
+                      recordId="{!v.recordId}"
+                      fields="AccountId"
+                      targetFields="{!v.loadedContact}"
+                      mode="EDIT" />
+    
+    <force:recordEdit aura:id="editAccount" recordId="{!v.loadedContact.AccountId}"/>
+    
+    <lightning:button class="slds-float_right" variant="brand" label="Save" onclick="{!c.saveRecord}" />
+	
+</aura:component>

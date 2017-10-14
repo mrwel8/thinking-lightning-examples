@@ -1,0 +1,21 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId">
+	
+    <aura:attribute name="loadedContact" type="Contact"/>
+
+    <force:recordData aura:id="editContact"
+                      recordId="{!v.recordId}"
+                      fields="Preferred_Color__c"
+                      targetFields="{!v.loadedContact}"
+                      mode="EDIT" />
+    
+    <div class="slds-grid slds-wrap slds-form slds-form_stacked">
+    	<div class="slds-size_1-of-4">
+        	<lightning:input type="color" label="Preferred Color" value="{!v.loadedContact.Preferred_Color__c}"/>
+        </div>
+        <div class="slds-size_3-of-4" />
+        <div class="slds-size_1-of-4 slds-p-top_small">
+            <lightning:button class="slds-float_right" variant="brand" label="Save" onclick="{!c.saveRecord}" />
+        </div>
+    </div>
+    
+</aura:component>

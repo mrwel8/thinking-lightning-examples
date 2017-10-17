@@ -6,7 +6,11 @@
     startCase : function(component, event, helper) {
 		var createRecordEvent = $A.get("e.force:createRecord");
         createRecordEvent.setParams({
-            "entityApiName": "Case"
+            "entityApiName": "Case",
+            "defaultFieldValues": {
+                'ContactId' : component.get("v.recordId"),
+                'Origin' : 'Phone'
+            }
         });
         createRecordEvent.fire();
 	},
